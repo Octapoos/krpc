@@ -156,7 +156,7 @@ pkg_zip(
         'service/UI/': 'GameData/kRPC/',
         'service/UI/CHANGES.txt': 'GameData/kRPC/CHANGES.UI.txt',
         # Module Manager
-        '../module_manager/file/ModuleManager.3.0.7.dll': 'GameData/ModuleManager.3.0.7.dll',
+        '../module_manager/file/ModuleManager.4.1.3.dll': 'GameData/ModuleManager.4.1.3.dll',
         # Clients
         'client/cnano/': 'client/',
         'client/cpp/': 'client/',
@@ -280,10 +280,12 @@ test_suite(
         '//service/SpaceCenter:lint',
         '//service/Drawing:lint',
         '//service/InfernalRobotics:lint',
+        '//service/KerbalAlarmClock:lint',
         '//service/RemoteTech:lint',
         '//service/UI:lint',
-        '//client/csharp:lint',
+        '//client/cnano:lint',
         '//client/cpp:lint',
+        '//client/csharp:lint',
         '//client/java:lint',
         '//client/python:lint',
         '//client/websockets:lint',
@@ -296,6 +298,7 @@ test_suite(
 filegroup(
     name = 'csproj',
     srcs = [
+        '//tools/cslibs',
         '//server',
         '//server:KRPC.Test',
         '//service/SpaceCenter',

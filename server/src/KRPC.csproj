@@ -69,11 +69,26 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\lib\ksp\KSP_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>..\..\bazel-krpc\external\csharp_protobuf_net35\file\Google.Protobuf.dll</HintPath>
+      <HintPath>..\..\bazel-genfiles\tools\cslibs\net35\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="KRPC.IO.Ports">
-      <HintPath>..\..\bazel-krpc\external\csharp_krpc_io_ports\file\KRPC.IO.Ports.dll</HintPath>
+      <HintPath>..\..\bazel-genfiles\tools\cslibs\KRPC.IO.Ports.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

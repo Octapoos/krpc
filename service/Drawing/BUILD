@@ -31,7 +31,7 @@ csharp_library(
 
 service_definitions(
     name = 'ServiceDefinitions',
-    assemblies = [':KRPC.Drawing', '//service/UI:KRPC.UI', '//service/SpaceCenter:KRPC.SpaceCenter'],
+    assemblies = [':KRPC.Drawing', '//service/UI:KRPC.UI', '//service/SpaceCenter:KRPC.SpaceCenter', '//tools/build/ksp:UnityEngine.TextRenderingModule'],
     service = 'Drawing',
     out = 'KRPC.Drawing.json',
     visibility = ['//visibility:public']
@@ -39,11 +39,16 @@ service_definitions(
 
 test_suite(
     name = 'test',
-    tests = [':lint', ':gendarme']
+    tests = [':lint']
+)
+
+test_suite(
+    name = 'lint',
+    tests = [':pylint', ':gendarme']
 )
 
 py_lint_test(
-    name = 'lint',
+    name = 'pylint',
     srcs = glob(['test/*.py']),
     pylint_config = 'test/pylint.rc',
     deps = ['//client/python', '//tools/krpctest'],

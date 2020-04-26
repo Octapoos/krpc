@@ -1,5 +1,5 @@
 from contextlib import contextmanager
-import itertools
+import sys
 import threading
 from krpc.error import StreamError
 from krpc.event import Event
@@ -12,6 +12,9 @@ from krpc.utils import snake_case
 from krpc.error import RPCError
 import krpc.streammanager
 import krpc.schema.KRPC_pb2 as KRPC
+
+if sys.version_info < (3, 0):
+    from future_builtins import zip  # noqa  # pylint: disable=redefined-builtin,import-error
 
 
 class Client(object):
@@ -172,14 +175,14 @@ class Client(object):
 
     def _build_call(self, service, procedure, args,
                     param_names, param_types, return_type):
-                    # pylint: disable=unused-argument
+        # pylint: disable=unused-argument
         """ Build a KRPC.ProcedureCall object """
 
         call = KRPC.ProcedureCall()
         call.service = service
         call.procedure = procedure
 
-        for i, (value, typ) in enumerate(itertools.izip(args, param_types)):
+        for i, (value, typ) in enumerate(zip(args, param_types)):
             if isinstance(value, DefaultArgument):
                 continue
             if not isinstance(value, typ.python_type):
